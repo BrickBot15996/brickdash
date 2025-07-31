@@ -1,19 +1,39 @@
 import { notFound, redirect } from "next/navigation";
-import { routeMap, RouteKey, RedirectKey } from "@/i18n/routing";
+import { routeMap, RouteKey } from "@/i18n/routing";
 import { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
-const metadataMap: Record<RouteKey, Record<string, Metadata>> = {};
+const metadataMap: Record<RouteKey, Record<string, Metadata>> = {
+  login: {},
+  blog: {},
+  editBlog: {},
+  createBlog: {},
+  sponsors: {},
+  theVault: {},
+  seasons: {},
+  sponsorshipTiers: {},
+  projects: {},
+};
 
-const componentMap: Record<RouteKey, React.ComponentType> = {};
+const componentMap: Record<RouteKey, React.ComponentType> = {
+  login: {},
+  blog: {},
+  editBlog: {},
+  createBlog: {},
+  sponsors: {},
+  theVault: {},
+  seasons: {},
+  sponsorshipTiers: {},
+  projects: {},
+};
 
-const redirectMap: Record<RedirectKey, string> = {};
+// const redirectMap: Record<RedirectKey, string> = {};
 
 function findRouteMatch(segments: string[], locale?: string) {
   if (locale) {
     const match = Object.entries(routeMap).find(([, localized]) => {
-      const localizedPath = localized[locale as "en" | "ro"];
+      const localizedPath = localized[locale as "en"];
       return (
         localizedPath.length === segments.length &&
         localizedPath.every((seg, idx) => seg === segments[idx])

@@ -1,18 +1,52 @@
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  locales: ["en", "ro"],
+  locales: ["en"],
 
   defaultLocale: "en",
 });
 
-export type Locale = "en" | "ro";
+export type Locale = "en";
 
-export type RedirectKey = {};
+// export type RedirectKey = "";
 
-export type RouteKey = {};
+export type RouteKey =
+  | "login"
+  | "blog"
+  | "editBlog"
+  | "createBlog"
+  | "sponsors"
+  | "theVault"
+  | "seasons"
+  | "sponsorshipTiers"
+  | "projects";
 
-export const routeMap: Record<
-  RouteKey | RedirectKey,
-  Record<Locale, string[]>
-> = {};
+export const routeMap: Record<RouteKey, Record<Locale, string[]>> = {
+  login: {
+    en: ["login"],
+  },
+  blog: {
+    en: ["blog"],
+  },
+  editBlog: {
+    en: ["blog", "edit"],
+  },
+  createBlog: {
+    en: ["blog", "create"],
+  },
+  sponsors: {
+    en: ["sponsors"],
+  },
+  theVault: {
+    en: ["the-vault"],
+  },
+  seasons: {
+    en: ["seasons"],
+  },
+  sponsorshipTiers: {
+    en: ["sponsorship-tiers"],
+  },
+  projects: {
+    en: ["projects"],
+  },
+};

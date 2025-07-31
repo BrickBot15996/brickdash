@@ -1,7 +1,7 @@
 import { Locale } from "@/i18n/routing";
 import { useLocale as useNextIntlLocale } from "next-intl";
 
-const supportedLocales: Locale[] = ["en", "ro"];
+const supportedLocales: Locale[] = ["en"];
 
 export function useStrictLocale(): Locale {
   const locale = useNextIntlLocale();

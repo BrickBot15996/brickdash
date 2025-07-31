@@ -11,6 +11,6 @@ export default async function RootRedirect({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const strictLocale: Locale = locale == "en" ? "en" : "ro";
-  redirect(i18nPath(strictLocale, "home"));
+  const strictLocale: Locale = "en";
+  redirect(i18nPath(strictLocale, "login"));
 }
