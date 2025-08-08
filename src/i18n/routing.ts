@@ -17,6 +17,8 @@ export type RouteKey =
   | "createBlog"
   | "sponsors"
   | "theVault"
+  | "checkpoint"
+  | "sparks"
   | "seasons"
   | "sponsorshipTiers"
   | "projects";
@@ -39,6 +41,12 @@ export const routeMap: Record<RouteKey, Record<Locale, string[]>> = {
   },
   theVault: {
     en: ["the-vault"],
+  },
+  checkpoint: {
+    en: ["checkpoint"],
+  },
+  sparks: {
+    en: ["sparks"],
   },
   seasons: {
     en: ["seasons"],

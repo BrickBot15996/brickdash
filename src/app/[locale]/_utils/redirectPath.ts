@@ -1,6 +1,6 @@
 import { Locale, RouteKey, routeMap } from "@/i18n/routing";
 
-export function i18nPath(locale: Locale, routeKey: RouteKey): string {
+export function generatePath(locale: Locale, routeKey: RouteKey): string {
   const segments: string[] = routeMap[routeKey]?.[locale];
   if (!segments)
     throw new Error(`Route ${routeKey} not defined for locale ${locale}`);

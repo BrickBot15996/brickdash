@@ -4,6 +4,8 @@ import { Inter, Anek_Latin } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { Analytics } from "@vercel/analytics/next";
+import { GlobalProvider } from "./global-context";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -59,10 +61,10 @@ export default async function RootLayout({
         className={`${anekLatin.variable} ${inter.variable} antialiased flex flex-col`}
       >
         <NextIntlClientProvider>
-          {/* <GlobalProvider>
-            <Nav /> */}
-          {children}
-          {/* </GlobalProvider> */}
+          <GlobalProvider>
+            {children}
+            <Analytics />
+          </GlobalProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { redirect } from "next/navigation";
-import { i18nPath } from "./_utils/redirectPath";
+import { generatePath } from "./_utils/redirectPath";
 import { Locale } from "@/i18n/routing";
 
 export default async function RootRedirect({
@@ -12,5 +12,5 @@ export default async function RootRedirect({
   setRequestLocale(locale);
 
   const strictLocale: Locale = "en";
-  redirect(i18nPath(strictLocale, "login"));
+  redirect(generatePath(strictLocale, "login"));
 }
