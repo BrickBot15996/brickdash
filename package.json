@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@squircle-js/react": "^1.2.18",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.54.0",
     "@vercel/analytics": "^1.5.0",
     "corner-smoothing": "^0.1.5",
+    "culori": "^4.0.2",
     "embla-carousel-react": "^8.6.0",
     "hamburger-react": "^2.5.2",
     "hex-to-css-filter": "^6.0.0",

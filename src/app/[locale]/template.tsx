@@ -83,7 +83,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           animate="visible"
           //exit="exit"
         >
-          <main className="mt-[var(--navbar-height)]">{children}</main>
+          <main>{children}</main>
         </motion.div>
       </AnimatePresence>
     </>

@@ -7,20 +7,26 @@ import {
   useState,
 } from "react";
 
-type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+export type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+export type LogInState = "login" | "2fa" | "loggedIn";
 
 type GlobalContextType = {
   currentBreakpoint: Breakpoint;
+  logInState: LogInState;
+  setLogInState: (state: LogInState) => void;
 };
 
 const defaultValue: GlobalContextType = {
   currentBreakpoint: "2xl",
+  logInState: "login",
+  setLogInState: () => {},
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultValue);
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   const [currentBreakpoint, setCurrentBreakpoint] = useState<Breakpoint>("2xl");
+  const [logInState, setLogInState] = useState<LogInState>("login");
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,7 +45,13 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ currentBreakpoint }}>
+    <GlobalContext.Provider
+      value={{
+        currentBreakpoint: currentBreakpoint,
+        logInState: logInState,
+        setLogInState: setLogInState,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

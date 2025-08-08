@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --bg: oklch(18.22% 0.00002 271.152);
-  --primary: oklch(87.495% 0.17902 92.686);
+  --bg: oklch(16.842% 0.00002 271.152);
+  --primary: oklch(87.3% 0.17854 92.233);
 
   --text: oklch(76.039% 0.00009 271.152);
   --text-alternate: oklch(100% 0.00011 271.152);
@@ -74,24 +74,52 @@
   --2xl-space-y: 4.5rem;
 
   h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    color: var(--primary);
+    font-weight: 800;
   }
 
   h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--primary);
+    font-weight: 800;
   }
 
   h3 {
+    font-size: 1.35rem;
+    line-height: 1.35rem;
+    color: var(--primary);
+    font-weight: 600;
   }
 
   h4 {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    color: var(--primary);
+    font-weight: 800;
   }
 
   h5 {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    color: var(--alternate-text);
+    font-weight: 700;
   }
 
   h6 {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    color: var(--alternate-text);
+    font-weight: 600;
   }
 
   p {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    color: var(--default-text);
+    font-weight: 500;
   }
 }
 
@@ -113,24 +141,52 @@
     --2xl-space-y: 4.5rem;
 
     h1 {
+      font-size: 3.2rem;
+      line-height: 3.2rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h2 {
+      font-size: 2.2rem;
+      line-height: 2.2rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h3 {
+      font-size: 1.35rem;
+      line-height: 1.6rem;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     h4 {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h5 {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      color: var(--alternate-text);
+      font-weight: 700;
     }
 
     h6 {
+      font-size: 1.1rem;
+      line-height: 1.3rem;
+      color: var(--alternate-text);
+      font-weight: 600;
     }
 
     p {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      color: var(--default-text);
+      font-weight: 500;
     }
   }
 }
@@ -153,24 +209,52 @@
     --2xl-space-y: 5rem;
 
     h1 {
+      font-size: 3.6rem;
+      line-height: 3.6rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h2 {
+      font-size: 2.6rem;
+      line-height: 2.6rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h3 {
+      font-size: 1.55rem;
+      line-height: 1.8rem;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     h4 {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h5 {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      color: var(--alternate-text);
+      font-weight: 700;
     }
 
     h6 {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: var(--alternate-text);
+      font-weight: 600;
     }
 
     p {
+      font-size: 1.3rem;
+      line-height: 1.7rem;
+      color: var(--default-text);
+      font-weight: 500;
     }
   }
 }
@@ -193,24 +277,52 @@
     --2xl-space-y: 5.5rem;
 
     h1 {
+      font-size: 4rem;
+      line-height: 4rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h2 {
+      font-size: 3rem;
+      line-height: 3rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     h4 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h5 {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      color: var(--alternate-text);
+      font-weight: 700;
     }
 
     h6 {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      color: var(--alternate-text);
+      font-weight: 600;
     }
 
     p {
+      font-size: 1.5rem;
+      line-height: 1.9rem;
+      color: var(--default-text);
+      font-weight: 500;
     }
   }
 }
@@ -221,24 +333,52 @@
     --page-width: min(calc(100vw - 8rem), 88rem);
 
     h1 {
+      font-size: 4rem;
+      line-height: 4rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h2 {
+      font-size: 3rem;
+      line-height: 3rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h3 {
+      font-size: 1.75rem;
+      line-height: 2rem;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     h4 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     h5 {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      color: var(--alternate-text);
+      font-weight: 700;
     }
 
     h6 {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      color: var(--alternate-text);
+      font-weight: 600;
     }
 
     p {
+      font-size: 1.5rem;
+      line-height: 1.9rem;
+      color: var(--default-text);
+      font-weight: 500;
     }
   }
 }
@@ -260,6 +400,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  height: 100%;
   width: 100%;
 }
 

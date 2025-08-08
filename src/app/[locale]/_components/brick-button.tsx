@@ -1,14 +1,16 @@
-import React, { CSSProperties, useState, useEffect, forwardRef } from "react";
+"use client";
+
+import React, { CSSProperties, useState, forwardRef } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion, Variants } from "framer-motion";
+import { oklch, formatCss } from "culori";
+import { themeColors } from "../themes";
 
 type ButtonParams = {
   text: string;
   arrow?: boolean;
   color?: string;
   width?: string;
-  gradientLight?: string;
-  gradientDark?: string;
   action?: () => void;
   className?: string;
   style?: CSSProperties;
@@ -19,10 +21,8 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
     {
       text,
       arrow = false,
-      color = "var(--default-yellow)",
+      color = themeColors.primary,
       width = "fit-content",
-      gradientLight = "var(--yellow-gradient-light)",
-      gradientDark = "var(--yellow-gradient-dark)",
       action = () => {},
       className = "px-[1rem] md:px-[1.3rem] lg:px-[1.5rem]",
       style = {},
@@ -33,23 +33,20 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
     const [isClicked, setIsClicked] = useState(false);
     const [isTouchScreen, setIsTouchScreen] = useState(false);
 
+    let tempColor = oklch(color);
+    tempColor.l -= 0.6;
+    tempColor.c -= 0.11;
+    const gradientDark = formatCss(tempColor);
+
+    tempColor = oklch(color);
+    tempColor.l -= 0.52;
+    tempColor.c -= 0.11;
+    const gradientLight = formatCss(tempColor);
+
     const getAnimationState = () => {
       if (isTouchScreen) return isClicked ? "clicked" : "default";
       else return isClicked ? "clicked" : isHovered ? "hovered" : "default";
     };
-
-    useEffect(() => {
-      if (!isClicked) return;
-
-      const handleRelease = () => setIsClicked(false);
-
-      window.addEventListener("mouseup", handleRelease);
-      window.addEventListener("touchend", handleRelease);
-      return () => {
-        window.removeEventListener("mouseup", handleRelease);
-        window.removeEventListener("touchend", handleRelease);
-      };
-    }, [isClicked]);
 
     return (
       <div
@@ -57,7 +54,10 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
         className="relative rounded-[1.5rem] h-fit select-none cursor-pointer"
         style={{ width }}
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseLeave={() => {
+          setIsHovered(false);
+          setIsClicked(false);
+        }}
         onMouseDown={() => {
           setIsClicked(true);
           setIsTouchScreen(false);
